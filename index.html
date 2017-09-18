@@ -1,34 +1,16 @@
 <html>
   <body>
-    <h1>Title</h1>
-    
+    <h1>Thoughts</h1>
+
     <form>
       <input><button>Add</button>
     </form>
     
     <ul></ul>
 
-    </script src="./node_modules/jquery/dist/jquery.min.js"></script>
-    </script src="./node_modules/gun/gun.min.js"></script>
-
-    <script>
-      var gun = Gun().get('thoughts');
-
-      $('form').on('submit', function (event) {
-        event.preventDefault();
-        gun.set($('input').val());
-        $('input').val('');
-      });
-
-      gun.map().on(function (thought, id) {
-        var li = $('#' + id).get(0) || $('<li>').attr('id', id).appendTo('ul');
-        if (thought) {
-          $(li).text(thought);
-        } else {
-          $(li).hide();
-        }
-      });
-    </script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/gun/gun.min.js"></script>
+    <script src="./src/todo.js"></script>
 
   </body>
 </html>
